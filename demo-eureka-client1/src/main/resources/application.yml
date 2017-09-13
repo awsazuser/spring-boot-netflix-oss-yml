@@ -2,16 +2,9 @@ server:
   port: 8091
 
 eureka:
-  instance:
-    leaseRenewalIntervalInSeconds: 1
-    leaseExpirationDurationInSeconds: 2
   client:
     serviceUrl:
       defaultZone: http://eurekaservice:8761/eureka/
-    healthcheck:
-      enabled: true
-    lease:
-      duration: 5
 
 spring:
   application:
