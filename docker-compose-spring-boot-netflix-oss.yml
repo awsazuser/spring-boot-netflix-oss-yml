@@ -13,25 +13,24 @@ services:
   osinfo:
     image: eurekaclient1:latest
     deploy:
-      replicas: 5
+      replicas: 1
       placement:
-        constraints: [node.role != manager]
+        constraints: [node.role == manager]
     networks:
       - springnw
   jinfo:
     image: eurekaclient2:latest
     deploy:
-      replicas: 5
+      replicas: 1
       placement:
-        constraints: [node.role != manager]
+        constraints: [node.role == manager]
     networks:
       - springnw
   gateway:
     image: zuul:latest
     deploy:
-      replicas: 5
       placement:
-        constraints: [node.role != manager]
+        constraints: [node.role == manager]
     networks:
       - springnw
   visualizer:
