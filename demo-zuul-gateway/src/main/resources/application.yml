@@ -7,16 +7,18 @@ eureka:
       defaultZone: http://eurekaservice:8761/eureka/
 
 zuul:
-  prefix: /api
-Eureka:
   routes:
     osinfo:
-      path: /osinfo
+      path: /osinfo/**
       serviceId: OSINFO
     jinfo:
-      path: /jinfo
+      path: /jinfo/**
       serviceId: JINFO
     
 spring:
   application:
     name: zuul
+
+management:
+  security:
+    enabled: false
