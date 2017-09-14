@@ -1,5 +1,5 @@
 server:
-   port: 9090
+   port: 8080
 
 eureka:
   client:
@@ -7,19 +7,15 @@ eureka:
       defaultZone: http://eurekaservice:8761/eureka/
 
 zuul:
+  Eureka:
   prefix: /api
-  ignoredServices: '*'
   routes:
     osinfo:
       path: /osinfo/**
       serviceId: OSINFO
-      stripPrefix: false
-      sensitiveHeaders: Authorization
     jinfo:
       path: /jinfo/**
       serviceId: JINFO
-      stripPrefix: false
-      sensitiveHeaders: Authorization
 
 spring:
   application:
